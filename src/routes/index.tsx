@@ -77,9 +77,33 @@ const services = [
 ];
 
 const projects = [
-  { image: projectSocial, title: "Social Media Campaign" },
-  { image: projectAds, title: "Paid Ad Campaign" },
-  { image: projectEmail, title: "Email Marketing" },
+  {
+    image: projectSocial,
+    title: "Social Media Growth Campaign",
+    category: "Social Media Management",
+    description:
+      "Developed targeted content calendars and high-converting visual assets to boost brand reach and engagement.",
+    metrics: ["High Engagement", "Organic Reach"],
+    href: "#projects",
+  },
+  {
+    image: projectAds,
+    title: "High-ROI Paid Ad Campaign",
+    category: "Paid Advertising",
+    description:
+      "Designed and optimized target audience segmentation and ad copy setup to lower CAC and maximize conversion rates.",
+    metrics: ["High CTR", "Optimized Budget"],
+    href: "#projects",
+  },
+  {
+    image: projectEmail,
+    title: "Email Marketing & Local SEO Optimization",
+    category: "Email & SEO",
+    description:
+      "Executed localized SEO strategy and targeted email nurture sequences to drive consistent customer conversions.",
+    metrics: ["Local Visibility", "Higher Open Rates"],
+    href: "#projects",
+  },
 ];
 
 const tools = [
@@ -268,31 +292,57 @@ function Index() {
         <div className="mx-auto max-w-6xl px-5">
           <SectionHeading>PROJECTS</SectionHeading>
           <div className="mt-9 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {projects.map(({ image, title }) => (
+            {projects.map(({ image, title, category, description, metrics, href }) => (
               <article
                 key={title}
-                className="overflow-hidden rounded-2xl bg-card shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift"
+                className="group flex flex-col overflow-hidden rounded-2xl bg-card shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift"
               >
-                <img
-                  src={image}
-                  alt={title}
-                  loading="lazy"
-                  width={768}
-                  height={576}
-                  className="h-52 w-full object-cover"
-                />
-                <div className="border-t-4 border-forest px-5 py-4">
-                  <h3 className="text-base font-bold text-foreground">{title}</h3>
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src={image}
+                    alt={title}
+                    loading="lazy"
+                    width={768}
+                    height={432}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col border-t-4 border-forest p-5">
+                  <span className="w-fit rounded-full bg-forest/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-forest">
+                    {category}
+                  </span>
+                  <h3 className="mt-3 text-base font-bold leading-snug text-foreground">
+                    {title}
+                  </h3>
+                  <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted-foreground">
+                    {description}
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {metrics.map((m) => (
+                      <span
+                        key={m}
+                        className="rounded-lg bg-secondary px-2.5 py-1 text-xs font-semibold text-foreground/85"
+                      >
+                        {m}
+                      </span>
+                    ))}
+                  </div>
+                  <a
+                    href={href}
+                    className="mt-5 inline-flex items-center gap-2 self-start text-sm font-semibold uppercase tracking-wide text-forest transition-colors hover:text-forest/80"
+                  >
+                    View Case Study <ArrowRight size={16} />
+                  </a>
                 </div>
               </article>
             ))}
           </div>
-          <div className="mt-7 flex justify-end">
+          <div className="mt-10 flex justify-center">
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-forest hover:underline"
+              className="inline-flex items-center gap-3 rounded-full bg-forest px-7 py-3 text-sm font-semibold uppercase tracking-wide text-forest-foreground shadow-card transition-transform hover:-translate-y-0.5"
             >
-              View all <ArrowRight size={16} />
+              View All Projects <ArrowRight size={18} />
             </a>
           </div>
         </div>
