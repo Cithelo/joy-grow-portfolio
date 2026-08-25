@@ -23,7 +23,7 @@ import {
   MousePointerClick,
 } from "lucide-react";
 
-import heroPortrait from "@/assets/hero-portrait.jpg";
+import joyPortrait from "@/assets/joy-portrait.jpg.asset.json";
 import projectSocial from "@/assets/project-social.jpg";
 import projectAds from "@/assets/project-ads.jpg";
 import projectEmail from "@/assets/project-email.jpg";
@@ -197,14 +197,18 @@ function Index() {
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-3xl bg-secondary">
-            <img
-              src={heroPortrait}
-              alt="Illustrated silhouette portrait of Joy Cithelo Gudyanga"
-              width={1024}
-              height={1024}
-              className="h-full w-full object-cover"
-            />
+          <div className="relative mx-auto w-full max-w-sm md:max-w-md">
+            <span className="absolute -left-4 -top-4 h-24 w-24 rounded-full bg-sage" aria-hidden="true" />
+            <span className="absolute -bottom-5 -right-4 h-28 w-28 rounded-3xl bg-forest/15" aria-hidden="true" />
+            <div className="relative overflow-hidden rounded-[9999px_9999px_1.75rem_1.75rem] border-4 border-card bg-secondary shadow-lift">
+              <img
+                src={joyPortrait.url}
+                alt="Portrait of Joy Cithelo Gudyanga, digital marketer"
+                width={1456}
+                height={1941}
+                className="aspect-[3/4] w-full object-cover object-top"
+              />
+            </div>
           </div>
         </div>
       </section>
