@@ -77,9 +77,33 @@ const services = [
 ];
 
 const projects = [
-  { image: projectSocial, title: "Social Media Campaign" },
-  { image: projectAds, title: "Paid Ad Campaign" },
-  { image: projectEmail, title: "Email Marketing" },
+  {
+    image: projectSocial,
+    title: "Social Media Growth Campaign",
+    category: "Social Media Management",
+    description:
+      "Developed targeted content calendars and high-converting visual assets to boost brand reach and engagement.",
+    metrics: ["High Engagement", "Organic Reach"],
+    href: "#projects",
+  },
+  {
+    image: projectAds,
+    title: "High-ROI Paid Ad Campaign",
+    category: "Paid Advertising",
+    description:
+      "Designed and optimized target audience segmentation and ad copy setup to lower CAC and maximize conversion rates.",
+    metrics: ["High CTR", "Optimized Budget"],
+    href: "#projects",
+  },
+  {
+    image: projectEmail,
+    title: "Email Marketing & Local SEO Optimization",
+    category: "Email & SEO",
+    description:
+      "Executed localized SEO strategy and targeted email nurture sequences to drive consistent customer conversions.",
+    metrics: ["Local Visibility", "Higher Open Rates"],
+    href: "#projects",
+  },
 ];
 
 const tools = [
