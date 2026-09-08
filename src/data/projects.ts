@@ -102,7 +102,7 @@ export const projects: Project[] = [
   },
 ];
 
-const categories = ["All", "Social Media Management", "Paid Advertising", "Email & SEO"];
+
 
 export const categories = [
   "All",
