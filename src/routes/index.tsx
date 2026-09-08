@@ -399,9 +399,9 @@ function Index() {
 
             <div className="mt-7 flex items-center gap-4">
               {[
-                { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-                { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-                { icon: Mail, href: "mailto:joyleencithegudyang@gmail.com", label: "Email" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/cithelo-gudyanga", label: "LinkedIn" },
+                { icon: Instagram, href: "https://www.instagram.com/leencithe", label: "Instagram" },
+                { icon: Mail, href: "mailto:joyleencithegudyanga@gmail.com", label: "Email" },
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
