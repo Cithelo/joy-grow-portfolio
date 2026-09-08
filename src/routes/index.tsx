@@ -411,7 +411,7 @@ function Index() {
           <div className="mt-9 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {visibleProjects.map((project) => (
               <article
-                key={project.title}
+                key={project.id}
                 role="button"
                 tabIndex={0}
                 onClick={() => setSelected(project)}
