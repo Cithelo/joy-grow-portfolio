@@ -399,9 +399,9 @@ function Index() {
 
             <div className="mt-7 flex items-center gap-4">
               {[
-                { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-                { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-                { icon: Mail, href: "mailto:joyleencithegudyang@gmail.com", label: "Email" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/cithelo-gudyanga", label: "LinkedIn" },
+                { icon: Instagram, href: "https://www.instagram.com/leencithe", label: "Instagram" },
+                { icon: Mail, href: "mailto:joyleencithegudyanga@gmail.com", label: "Email" },
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
@@ -664,10 +664,32 @@ function Index() {
                 <li className="flex items-start gap-3">
                   <Mail size={18} className="mt-0.5 shrink-0 text-forest" />
                   <a
-                    href="mailto:joyleencithegudyang@gmail.com"
+                    href="mailto:joyleencithegudyanga@gmail.com"
                     className="break-all text-foreground/85 transition-colors hover:text-forest"
                   >
-                    joyleencithegudyang@gmail.com
+                    joyleencithegudyanga@gmail.com
+                  </a>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Linkedin size={18} className="shrink-0 text-forest" />
+                  <a
+                    href="https://www.linkedin.com/in/cithelo-gudyanga"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="break-all text-foreground/85 transition-colors hover:text-forest"
+                  >
+                    linkedin.com/in/cithelo-gudyanga
+                  </a>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Instagram size={18} className="shrink-0 text-forest" />
+                  <a
+                    href="https://www.instagram.com/leencithe"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="break-all text-foreground/85 transition-colors hover:text-forest"
+                  >
+                    instagram.com/leencithe
                   </a>
                 </li>
                 <li className="flex items-center gap-3">
