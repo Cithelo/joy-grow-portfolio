@@ -39,6 +39,55 @@ import { supabase } from "@/integrations/supabase/client";
 import joyPortrait from "@/assets/joy-portrait.jpg.asset.json";
 import { projects, categories, type Project } from "@/data/projects";
 
+export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Joy Cithelo Gudyanga — Digital Marketer Portfolio" },
+      {
+        name: "description",
+        content:
+          "Digital marketer in Harare, Zimbabwe helping brands grow with social media management, content creation, paid ads, email marketing, SEO and brand strategy.",
+      },
+      { property: "og:title", content: "Joy Cithelo Gudyanga — Digital Marketer" },
+      {
+        property: "og:description",
+        content:
+          "Strategy, content and results. I help businesses grow online through smart marketing and engaging content.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: Index,
+});
+
+const navLinks = [
+  { label: "Home", href: "#home" },
+  { label: "Services", href: "#services" },
+  { label: "Projects", href: "#projects" },
+  { label: "Tools", href: "#tools" },
+  { label: "Contact", href: "#contact" },
+];
+
+const skills = [
+  "Social Media Management",
+  "Content Creation",
+  "Digital Strategy",
+  "Email Marketing",
+  "SEO",
+  "Brand Strategy",
+];
+
+const services = [
+  { icon: MessageSquare, title: "Social Media Management" },
+  { icon: Pencil, title: "Content Creation" },
+  { icon: Megaphone, title: "Paid Advertising" },
+  { icon: Mail, title: "Email Marketing" },
+  { icon: Search, title: "SEO" },
+  { icon: Target, title: "Brand Strategy" },
+];
+
+
 const tools = [
   { icon: Palette, name: "Canva" },
   { icon: InfinityIcon, name: "Meta Business Suite" },
