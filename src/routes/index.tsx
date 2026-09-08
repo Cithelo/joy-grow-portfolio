@@ -218,12 +218,22 @@ function ContactForm() {
     const email = form.email.trim();
     const message = form.message.trim();
 
-    if (!name || name.length > 100) return toast.error("Please enter your name (max 100 characters).");
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 255)
-      return toast.error("Please enter a valid email address.");
-    if (!message || message.length > 1500)
-      return toast.error("Please enter a message (max 1500 characters).");
-    if (form.subject.trim().length > 150) return toast.error("Subject is too long.");
+    if (!name || name.length > 100) {
+      toast.error("Please enter your name (max 100 characters).");
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 255) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+    if (!message || message.length > 1500) {
+      toast.error("Please enter a message (max 1500 characters).");
+      return;
+    }
+    if (form.subject.trim().length > 150) {
+      toast.error("Subject is too long.");
+      return;
+    }
 
     setSending(true);
     const { error } = await supabase.from("contact_messages").insert({
