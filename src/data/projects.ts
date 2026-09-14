@@ -1,5 +1,6 @@
-import newsdayCover from "@/assets/project-newsday.webp.asset.json";
-import leenCleaningProsCover from "@/assets/leen-cleaning-pros-brand-book.webp.asset.json";
+// Images are imported directly so they are bundled with the site and work on any host.
+import newsdayCover from "@/assets/project-newsday.webp";
+import leenCleaningProsCover from "@/assets/leen-cleaning-pros-brand-book.webp";
 
 export type Project = {
   id: string;

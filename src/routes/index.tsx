@@ -36,7 +36,7 @@ import {
 } from "@/components/ui/dialog";
 import { supabase } from "@/integrations/supabase/client";
 
-import joyPortrait from "@/assets/joy-portrait.jpg.asset.json";
+import joyPortrait from "@/assets/joy-portrait.webp";
 import { projects, categories, type Project } from "@/data/projects";
 
 export const Route = createFileRoute("/")({
@@ -321,7 +321,7 @@ function Index() {
             <span className="absolute -bottom-5 -right-4 h-28 w-28 rounded-3xl bg-forest/15" aria-hidden="true" />
             <div className="relative overflow-hidden rounded-[9999px_9999px_1.75rem_1.75rem] border-4 border-card bg-secondary shadow-lift">
               <img
-                src={joyPortrait.url}
+                src={joyPortrait}
                 alt="Portrait of Joy Cithelo Gudyanga, digital marketer"
                 width={1456}
                 height={1941}
