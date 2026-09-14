@@ -1,6 +1,7 @@
 // Images are imported directly so they are bundled with the site and work on any host.
 import newsdayCover from "@/assets/project-newsday.webp";
 import leenCleaningProsCover from "@/assets/leen-cleaning-pros-brand-book.webp";
+import leenHomesEmailCover from "@/assets/leen-homes-email-marketing.webp";
 
 export type Project = {
   id: string;
@@ -69,6 +70,29 @@ export const projects: Project[] = [
       role: "Client",
     },
     link: "https://canva.link/unsm943imbgkc06",
+  },
+  {
+    id: "leen-homes-email-marketing",
+    image: leenHomesEmailCover,
+    title: "Leen Homes Technology Email Marketing",
+    category: "Email & SEO",
+    description:
+      "An email marketing overview for Leen Homes Technology, focused on building customer relationships and driving growth through modern home technology solutions.",
+    badges: ["Email Marketing", "Campaign Strategy", "Customer Engagement"],
+    overview:
+      "A focused email marketing project for Leen Homes Technology, created to communicate innovative home technology solutions clearly, strengthen customer relationships and support sustainable business growth.",
+    strategies: [
+      "Developed campaign messaging around smarter modern living",
+      "Structured content to connect technology benefits with customer needs",
+      "Created a clear visual direction aligned with the technology brand",
+      "Focused calls to action on relationship building and business growth",
+    ],
+    results: [
+      { label: "Channel", value: "Email" },
+      { label: "Focus", value: "Engagement" },
+      { label: "Format", value: "Overview" },
+    ],
+    link: "https://canva.link/hlztfeml81izeaw",
   },
 ];
 
