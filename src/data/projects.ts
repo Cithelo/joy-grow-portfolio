@@ -1,4 +1,5 @@
 import newsdayCover from "@/assets/project-newsday.webp.asset.json";
+import leenCleaningProsCover from "@/assets/leen-cleaning-pros-brand-book.webp.asset.json";
 
 export type Project = {
   id: string;
