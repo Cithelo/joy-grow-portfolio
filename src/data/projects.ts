@@ -20,7 +20,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: "newsday-seo-audit",
-    image: newsdayCover.url,
+    image: newsdayCover,
     title: "Newsday SEO & Performance Audit",
     category: "Email & SEO",
     description:
@@ -43,7 +43,7 @@ export const projects: Project[] = [
   },
   {
     id: "leen-cleaning-pros-brand-book",
-    image: leenCleaningProsCover.url,
+    image: leenCleaningProsCover,
     title: "Leen Cleaning Pros Brand Book",
     category: "Brand Strategy",
     description:
