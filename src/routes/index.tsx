@@ -414,11 +414,17 @@ function Index() {
                 key={project.id}
                 role="button"
                 tabIndex={0}
-                onClick={() => setSelected(project)}
+                onClick={() =>
+                  project.link
+                    ? window.open(project.link, "_blank", "noopener,noreferrer")
+                    : setSelected(project)
+                }
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
                     e.preventDefault();
-                    setSelected(project);
+                    project.link
+                      ? window.open(project.link, "_blank", "noopener,noreferrer")
+                      : setSelected(project);
                   }
                 }}
                 className="group flex animate-fade-in cursor-pointer flex-col overflow-hidden rounded-2xl bg-card shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift focus:outline-none focus-visible:ring-2 focus-visible:ring-forest"
@@ -427,9 +433,11 @@ function Index() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    loading="lazy"
-                    width={768}
-                    height={432}
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    width={1600}
+                    height={900}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
@@ -454,7 +462,7 @@ function Index() {
                     ))}
                   </div>
                   <span className="mt-5 inline-flex items-center gap-2 self-start text-sm font-semibold uppercase tracking-wide text-forest transition-all duration-300 group-hover:gap-3">
-                    View Case Study <ArrowRight size={16} />
+                    View Project <ArrowRight size={16} />
                   </span>
                 </div>
               </article>
@@ -523,15 +531,28 @@ function Index() {
                 </ul>
               </div>
 
-              <figure className="rounded-2xl bg-forest p-5 text-forest-foreground">
-                <Quote size={22} className="opacity-70" />
-                <blockquote className="mt-2 text-sm leading-relaxed">
-                  {selected.testimonial.quote}
-                </blockquote>
-                <figcaption className="mt-3 text-xs font-semibold uppercase tracking-wide opacity-85">
-                  {selected.testimonial.author} · {selected.testimonial.role}
-                </figcaption>
-              </figure>
+              {selected.testimonial && (
+                <figure className="rounded-2xl bg-forest p-5 text-forest-foreground">
+                  <Quote size={22} className="opacity-70" />
+                  <blockquote className="mt-2 text-sm leading-relaxed">
+                    {selected.testimonial.quote}
+                  </blockquote>
+                  <figcaption className="mt-3 text-xs font-semibold uppercase tracking-wide opacity-85">
+                    {selected.testimonial.author} · {selected.testimonial.role}
+                  </figcaption>
+                </figure>
+              )}
+
+              {selected.link && (
+                <a
+                  href={selected.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-forest px-7 py-3 text-sm font-semibold uppercase tracking-wide text-forest-foreground shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift"
+                >
+                  View Project <ArrowRight size={16} />
+                </a>
+              )}
             </>
           )}
         </DialogContent>
