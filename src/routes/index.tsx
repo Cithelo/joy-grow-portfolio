@@ -13,8 +13,8 @@ import {
   Megaphone,
   Search,
   Target,
-  QrCode,
   ArrowRight,
+
   Palette,
   Infinity as InfinityIcon,
   BarChart3,
@@ -37,7 +37,9 @@ import {
 import { supabase } from "@/integrations/supabase/client";
 
 import joyPortrait from "@/assets/joy-portrait.webp";
+import whatsappQr from "@/assets/whatsapp-qr.webp";
 import { projects, categories, type Project } from "@/data/projects";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -638,16 +640,28 @@ function Index() {
               </ul>
             </div>
 
-            <div className="flex items-center gap-5 rounded-2xl bg-forest p-6 text-forest-foreground">
-              <span className="grid h-24 w-24 shrink-0 place-items-center rounded-xl bg-forest-foreground text-forest">
-                <QrCode size={64} strokeWidth={1.25} />
-              </span>
-              <p className="font-script text-3xl leading-tight">
-                Let&apos;s work
-                <br />
-                together
-              </p>
+            <div className="flex flex-col items-center gap-4 rounded-2xl bg-forest p-6 text-center text-forest-foreground">
+              <img
+                src={whatsappQr}
+                alt="WhatsApp QR code — scan to start a chat with Joy"
+                width={180}
+                height={186}
+                loading="eager"
+                decoding="async"
+                className="h-36 w-auto rounded-xl bg-forest-foreground p-2 shadow-card"
+              />
+              <div>
+                <p className="font-script text-2xl leading-tight">
+                  Let&apos;s work
+                  <br />
+                  together
+                </p>
+                <p className="mt-1.5 text-xs font-medium opacity-80">
+                  Scan to chat on WhatsApp
+                </p>
+              </div>
             </div>
+
           </div>
 
           <div className="mt-10 border-t border-border pt-8">
