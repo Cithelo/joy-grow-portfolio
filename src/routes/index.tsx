@@ -347,6 +347,14 @@ function Index() {
               creativity and digital insights to connect brands with the right
               audience and achieve meaningful results.
             </p>
+            <a
+              href="https://canva.link/5eyz41vx2gj5ino"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-forest px-6 py-2.5 text-sm font-semibold uppercase tracking-wide text-forest-foreground shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift"
+            >
+              View CV <ArrowRight size={16} />
+            </a>
           </div>
           <div className="md:justify-self-end">
             <SectionHeading>MY SKILLS</SectionHeading>
