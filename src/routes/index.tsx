@@ -302,7 +302,7 @@ function Index() {
 
             <div className="mt-7 flex items-center gap-4">
               {[
-                { icon: Linkedin, href: "https://www.linkedin.com/in/cithelo-gudyanga", label: "LinkedIn" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/cithelo-gudyanga-9366173b5", label: "LinkedIn" },
                 { icon: Instagram, href: "https://www.instagram.com/leencithe", label: "Instagram" },
                 { icon: Mail, href: "mailto:joyleencithegudyanga@gmail.com", label: "Email" },
               ].map(({ icon: Icon, href, label }) => (
@@ -605,12 +605,12 @@ function Index() {
                 <li className="flex items-center gap-3">
                   <Linkedin size={18} className="shrink-0 text-forest" />
                   <a
-                    href="https://www.linkedin.com/in/cithelo-gudyanga"
+                    href="https://www.linkedin.com/in/cithelo-gudyanga-9366173b5"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="break-all text-foreground/85 transition-colors hover:text-forest"
                   >
-                    linkedin.com/in/cithelo-gudyanga
+                    linkedin.com/in/cithelo-gudyanga-9366173b5
                   </a>
                 </li>
                 <li className="flex items-center gap-3">
