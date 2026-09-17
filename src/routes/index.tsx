@@ -302,7 +302,7 @@ function Index() {
 
             <div className="mt-7 flex items-center gap-4">
               {[
-                { icon: Linkedin, href: "https://www.linkedin.com/in/cithelo-gudyanga", label: "LinkedIn" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/cithelo-gudyanga-9366173b5", label: "LinkedIn" },
                 { icon: Instagram, href: "https://www.instagram.com/leencithe", label: "Instagram" },
                 { icon: Mail, href: "mailto:joyleencithegudyanga@gmail.com", label: "Email" },
               ].map(({ icon: Icon, href, label }) => (
