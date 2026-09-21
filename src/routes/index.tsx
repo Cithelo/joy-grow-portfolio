@@ -23,7 +23,10 @@ import {
   MousePointerClick,
   Quote,
   Loader2,
+  Download,
 } from "lucide-react";
+
+const CV_URL = "/cv/Cithelo-Gudyanga-CV.pdf";
 import { toast } from "sonner";
 
 import { Toaster } from "@/components/ui/sonner";
@@ -567,6 +570,60 @@ function Index() {
           )}
         </DialogContent>
       </Dialog>
+
+      {/* CV preview modal */}
+      <Dialog open={cvOpen} onOpenChange={setCvOpen}>
+        <DialogContent className="max-h-[92vh] sm:max-w-3xl">
+          <DialogHeader>
+            <DialogTitle className="text-left text-xl font-extrabold text-foreground">
+              Curriculum Vitae
+            </DialogTitle>
+            <DialogDescription className="text-left">
+              Joy Cithelo Gudyanga — Digital Marketer
+            </DialogDescription>
+          </DialogHeader>
+          <div className="overflow-hidden rounded-xl border border-border bg-muted">
+            <object
+              data={CV_URL}
+              type="application/pdf"
+              className="h-[60vh] w-full"
+              aria-label="CV preview"
+            >
+              <div className="flex h-[60vh] flex-col items-center justify-center gap-3 p-6 text-center">
+                <p className="text-sm text-muted-foreground">
+                  Preview isn&apos;t supported on this device.
+                </p>
+                <a
+                  href={CV_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-forest px-5 py-2 text-sm font-semibold text-forest-foreground"
+                >
+                  Open CV <ArrowRight size={16} />
+                </a>
+              </div>
+            </object>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href={CV_URL}
+              download="Cithelo-Gudyanga-CV.pdf"
+              className="inline-flex items-center gap-2 rounded-full bg-forest px-6 py-2.5 text-sm font-semibold uppercase tracking-wide text-forest-foreground shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift"
+            >
+              <Download size={16} /> Download CV
+            </a>
+            <a
+              href={CV_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-forest px-6 py-2.5 text-sm font-semibold uppercase tracking-wide text-forest transition-all duration-300 hover:bg-secondary"
+            >
+              Open in new tab <ArrowRight size={16} />
+            </a>
+          </div>
+        </DialogContent>
+      </Dialog>
+
 
       {/* Tools & Contact */}
       <footer id="contact" className="mx-auto max-w-6xl px-5 py-14 md:py-20">
