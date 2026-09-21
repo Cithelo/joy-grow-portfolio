@@ -23,7 +23,10 @@ import {
   MousePointerClick,
   Quote,
   Loader2,
+  Download,
 } from "lucide-react";
+
+const CV_URL = "/cv/Cithelo-Gudyanga-CV.pdf";
 import { toast } from "sonner";
 
 import { Toaster } from "@/components/ui/sonner";
@@ -38,6 +41,7 @@ import { supabase } from "@/integrations/supabase/client";
 
 import joyPortrait from "@/assets/joy-portrait.webp";
 import whatsappQr from "@/assets/whatsapp-qr.webp";
+import cvPreview from "@/assets/cv-preview.webp";
 import { projects, categories, type Project } from "@/data/projects";
 
 
@@ -214,6 +218,7 @@ function Index() {
   const [open, setOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState("All");
   const [selected, setSelected] = useState<Project | null>(null);
+  const [cvOpen, setCvOpen] = useState(false);
 
   const visibleProjects = useMemo(
     () =>
@@ -349,14 +354,13 @@ function Index() {
               creativity and digital insights to connect brands with the right
               audience and achieve meaningful results.
             </p>
-            <a
-              href="https://canva.link/5eyz41vx2gj5ino"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() => setCvOpen(true)}
               className="mt-6 inline-flex items-center gap-2 rounded-full bg-forest px-6 py-2.5 text-sm font-semibold uppercase tracking-wide text-forest-foreground shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift"
             >
               View CV <ArrowRight size={16} />
-            </a>
+            </button>
           </div>
           <div className="md:justify-self-end">
             <SectionHeading>MY SKILLS</SectionHeading>
@@ -567,6 +571,46 @@ function Index() {
           )}
         </DialogContent>
       </Dialog>
+
+      {/* CV preview modal */}
+      <Dialog open={cvOpen} onOpenChange={setCvOpen}>
+        <DialogContent className="max-h-[92vh] sm:max-w-3xl">
+          <DialogHeader>
+            <DialogTitle className="text-left text-xl font-extrabold text-foreground">
+              Curriculum Vitae
+            </DialogTitle>
+            <DialogDescription className="text-left">
+              Joy Cithelo Gudyanga — Digital Marketer
+            </DialogDescription>
+          </DialogHeader>
+          <div className="max-h-[62vh] overflow-y-auto rounded-xl border border-border bg-muted p-2">
+            <img
+              src={cvPreview}
+              alt="Preview of Joy Cithelo Gudyanga's CV"
+              className="w-full rounded-lg shadow-card"
+              loading="eager"
+            />
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href={CV_URL}
+              download="Cithelo-Gudyanga-CV.pdf"
+              className="inline-flex items-center gap-2 rounded-full bg-forest px-6 py-2.5 text-sm font-semibold uppercase tracking-wide text-forest-foreground shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift"
+            >
+              <Download size={16} /> Download CV
+            </a>
+            <a
+              href={CV_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-forest px-6 py-2.5 text-sm font-semibold uppercase tracking-wide text-forest transition-all duration-300 hover:bg-secondary"
+            >
+              Open in new tab <ArrowRight size={16} />
+            </a>
+          </div>
+        </DialogContent>
+      </Dialog>
+
 
       {/* Tools & Contact */}
       <footer id="contact" className="mx-auto max-w-6xl px-5 py-14 md:py-20">
