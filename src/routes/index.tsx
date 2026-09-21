@@ -41,6 +41,7 @@ import { supabase } from "@/integrations/supabase/client";
 
 import joyPortrait from "@/assets/joy-portrait.webp";
 import whatsappQr from "@/assets/whatsapp-qr.webp";
+import cvPreview from "@/assets/cv-preview.webp";
 import { projects, categories, type Project } from "@/data/projects";
 
 
