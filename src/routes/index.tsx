@@ -341,15 +341,14 @@ function Index() {
 
       {/* About & Skills */}
       <section id="about" className="bg-secondary/70 py-14 md:py-16">
-        <div className="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-2">
-          <div>
+        <div className="mx-auto grid max-w-6xl items-start gap-10 px-5 md:grid-cols-[1fr_auto_0.85fr] md:gap-8 lg:gap-12">
+          {/* Bio */}
+          <div className="space-y-5">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-forest">
               About me
             </p>
-            <div className="mt-4">
-              <SectionHeading>WHO I AM</SectionHeading>
-            </div>
-            <p className="mt-5 max-w-lg leading-relaxed text-foreground/80">
+            <SectionHeading>WHO I AM</SectionHeading>
+            <p className="max-w-lg leading-relaxed text-foreground/80">
               I am Joy Cithelo Gudyanga, a passionate Digital Marketer who combines
               creativity and digital insights to connect brands with the right
               audience and achieve meaningful results.
@@ -357,17 +356,28 @@ function Index() {
             <button
               type="button"
               onClick={() => setCvOpen(true)}
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-forest px-6 py-2.5 text-sm font-semibold uppercase tracking-wide text-forest-foreground shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift"
+              className="inline-flex items-center gap-2 rounded-full bg-forest px-6 py-2.5 text-sm font-semibold uppercase tracking-wide text-forest-foreground shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift"
             >
               View CV <ArrowRight size={16} />
             </button>
           </div>
-          <div className="md:justify-self-end">
+
+          {/* Vertical divider */}
+          <div
+            className="hidden md:block w-px self-stretch bg-forest/10"
+            aria-hidden="true"
+          />
+
+          {/* Skills */}
+          <div className="space-y-5">
             <SectionHeading>MY SKILLS</SectionHeading>
-            <ul className="mt-5 space-y-2.5">
+            <ul className="space-y-2.5">
               {skills.map((s) => (
-                <li key={s} className="flex items-center gap-3 text-foreground/85">
-                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-forest" />
+                <li
+                  key={s}
+                  className="group flex items-center gap-3 text-foreground/85 transition-colors duration-200 hover:text-forest"
+                >
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-forest/60 transition-colors duration-200 group-hover:bg-forest" />
                   {s}
                 </li>
               ))}
