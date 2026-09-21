@@ -582,27 +582,13 @@ function Index() {
               Joy Cithelo Gudyanga — Digital Marketer
             </DialogDescription>
           </DialogHeader>
-          <div className="overflow-hidden rounded-xl border border-border bg-muted">
-            <object
-              data={CV_URL}
-              type="application/pdf"
-              className="h-[60vh] w-full"
-              aria-label="CV preview"
-            >
-              <div className="flex h-[60vh] flex-col items-center justify-center gap-3 p-6 text-center">
-                <p className="text-sm text-muted-foreground">
-                  Preview isn&apos;t supported on this device.
-                </p>
-                <a
-                  href={CV_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-forest px-5 py-2 text-sm font-semibold text-forest-foreground"
-                >
-                  Open CV <ArrowRight size={16} />
-                </a>
-              </div>
-            </object>
+          <div className="max-h-[62vh] overflow-y-auto rounded-xl border border-border bg-muted p-2">
+            <img
+              src={cvPreview}
+              alt="Preview of Joy Cithelo Gudyanga's CV"
+              className="w-full rounded-lg shadow-card"
+              loading="eager"
+            />
           </div>
           <div className="flex flex-wrap gap-3">
             <a
