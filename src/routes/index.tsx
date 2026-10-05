@@ -229,7 +229,7 @@ function Index() {
   );
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen overflow-x-hidden bg-background">
       <Toaster />
       <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
         <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 md:flex md:justify-between">
@@ -258,20 +258,23 @@ function Index() {
             type="button"
             aria-label="Toggle menu"
             onClick={() => setOpen((v) => !v)}
-            className="shrink-0 rounded-md border border-border p-2 text-forest transition-colors hover:bg-secondary md:hidden"
+            className="grid h-11 w-11 shrink-0 place-items-center rounded-md border border-border text-forest transition-colors hover:bg-secondary md:hidden"
           >
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 
         {open && (
-          <nav className="border-t border-border bg-background px-5 py-3 md:hidden">
+          <button type="button" aria-label="Close menu" onClick={() => setOpen(false)} className="fixed inset-0 top-[var(--hdr,0)] -z-10 cursor-default bg-foreground/20 md:hidden" />
+        )}
+        {open && (
+          <nav className="animate-fade-in border-t border-border bg-background px-5 py-3 md:hidden">
             {navLinks.map((l) => (
               <a
                 key={l.label}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="block py-2 text-sm font-semibold uppercase tracking-wide text-foreground/80 transition-colors hover:text-forest"
+                className="flex min-h-11 items-center py-2 text-sm font-semibold uppercase tracking-wide text-foreground/80 transition-colors hover:text-forest"
               >
                 {l.label}
               </a>
@@ -284,7 +287,7 @@ function Index() {
       <section id="home" className="mx-auto max-w-6xl px-5 py-14 md:py-20">
         <div className="grid items-center gap-10 md:grid-cols-2">
           <div>
-            <h1 className="font-display text-4xl font-extrabold leading-tight tracking-tight text-foreground sm:text-5xl">
+            <h1 className="font-display text-3xl font-extrabold leading-tight tracking-tight text-foreground sm:text-4xl lg:text-5xl">
               I MARKET BRANDS
               <br />
               THAT <span className="text-forest">GROW.</span>
@@ -299,13 +302,13 @@ function Index() {
 
             <a
               href="#contact"
-              className="mt-7 inline-flex items-center gap-3 rounded-full bg-forest px-7 py-3 text-sm font-semibold uppercase tracking-wide text-forest-foreground shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift"
+              className="mt-7 flex min-h-11 w-full items-center justify-center gap-3 rounded-full bg-forest px-7 py-3 sm:inline-flex sm:w-auto text-sm font-semibold uppercase tracking-wide text-forest-foreground shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift"
             >
               <Mail size={18} />
               Let&apos;s work together
             </a>
 
-            <div className="mt-7 flex items-center gap-4">
+            <div className="mt-7 flex items-center justify-center gap-4 sm:justify-start">
               {[
                 { icon: Linkedin, href: "https://www.linkedin.com/in/cithelo-gudyanga-9366173b5", label: "LinkedIn" },
                 { icon: Instagram, href: "https://www.instagram.com/leencithe", label: "Instagram" },
