@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Mail,
   Phone,
@@ -228,10 +228,20 @@ function Index() {
     [activeCategory],
   );
 
+  const headerRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    if (!open) return;
+    const close = (e: PointerEvent) => {
+      if (!headerRef.current?.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("pointerdown", close);
+    return () => document.removeEventListener("pointerdown", close);
+  }, [open]);
+
   return (
     <div className="min-h-screen overflow-x-hidden bg-background">
       <Toaster />
-      <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
+      <header ref={headerRef} className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
         <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 md:flex md:justify-between">
           <a href="#home" className="min-w-0">
             <span className="block truncate font-display text-lg font-extrabold tracking-tight text-foreground sm:text-xl">
@@ -264,9 +274,6 @@ function Index() {
           </button>
         </div>
 
-        {open && (
-          <button type="button" aria-label="Close menu" onClick={() => setOpen(false)} className="fixed inset-0 top-[var(--hdr,0)] -z-10 cursor-default bg-foreground/20 md:hidden" />
-        )}
         {open && (
           <nav className="animate-fade-in border-t border-border bg-background px-5 py-3 md:hidden">
             {navLinks.map((l) => (
